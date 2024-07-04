@@ -9,15 +9,21 @@
 
 ### Backend
 
-1. Install dependencies:
+1. Navigate to the client directory:
+
+   ```bash
+   cd server
+   ```
+
+2. Install dependencies:
    ```bash
    npm install
    ```
-2. Build the application:
+3. Build the application:
    ```bash
    npm run build
    ```
-3. Start the server:
+4. Start the server:
    ```bash
    npm start
    ```
@@ -46,5 +52,4 @@
    ```
 
 2. Access the application:
-   - Backend: `http://localhost:3000`
-   - Frontend: `http://localhost:3000`
+   - App URL : `http://localhost:3000`
