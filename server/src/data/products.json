@@ -9,7 +9,8 @@
       "rating": 4.69,
       "stock": 94,
       "brand": "Apple",
-      "category": "smartphones"
+      "category": "smartphones",
+      "image": "https://www.gizmochina.com/wp-content/uploads/2018/09/Apple-iPhone-Xs-600x600.jpg"
     },
     {
       "id": 2,
@@ -20,7 +21,8 @@
       "rating": 4.44,
       "stock": 34,
       "brand": "Apple",
-      "category": "smartphones"
+      "category": "smartphones",
+      "image": "https://www.gizmochina.com/wp-content/uploads/2018/09/Apple-iPhone-Xs-600x600.jpg"
     },
     {
       "id": 3,
@@ -31,7 +33,8 @@
       "rating": 4.09,
       "stock": 36,
       "brand": "Samsung",
-      "category": "smartphones"
+      "category": "smartphones",
+      "image": "https://img.etimg.com/photo/msid-98945112/samsung-galaxy-s23-ultra.jpg"
     },
     {
       "id": 4,
@@ -42,7 +45,8 @@
       "rating": 4.3,
       "stock": 123,
       "brand": "OPPO",
-      "category": "smartphones"
+      "category": "smartphones",
+      "image": "https://opsg-img-cdn-gl.heytapimg.com/epb/202402/20/VYh23XynbefcMeYT.png"
     },
     {
       "id": 5,
@@ -53,7 +57,8 @@
       "rating": 4.09,
       "stock": 32,
       "brand": "Huawei",
-      "category": "smartphones"
+      "category": "smartphones",
+      "image": "https://consumer.huawei.com/content/dam/huawei-cbg-site/common/mkt/plp/phones/new-phones/model-banner/p50-pro-black.png"
     },
     {
       "id": 6,
@@ -64,7 +69,8 @@
       "rating": 4.57,
       "stock": 83,
       "brand": "Apple",
-      "category": "laptops"
+      "category": "laptops",
+      "image": "https://istockbd.com/cdn/shop/products/MacBooK-Air-M1-Space-Gray-iStockBD.png?v=1649504754&width=1000"
     },
     {
       "id": 7,
@@ -75,7 +81,8 @@
       "rating": 4.25,
       "stock": 50,
       "brand": "Samsung",
-      "category": "laptops"
+      "category": "laptops",
+      "image": "https://media.wired.com/photos/64daad6b4a854832b16fd3bc/master/pass/How-to-Choose-a-Laptop-August-2023-Gear.jpg"
     },
     {
       "id": 8,
@@ -86,7 +93,8 @@
       "rating": 4.43,
       "stock": 68,
       "brand": "Microsoft Surface",
-      "category": "laptops"
+      "category": "laptops",
+      "image": "https://media.wired.com/photos/64daad6b4a854832b16fd3bc/master/pass/How-to-Choose-a-Laptop-August-2023-Gear.jpg"
     },
     {
       "id": 9,
@@ -97,7 +105,8 @@
       "rating": 4.54,
       "stock": 96,
       "brand": "Infinix",
-      "category": "laptops"
+      "category": "laptops",
+      "image": "https://media.wired.com/photos/64daad6b4a854832b16fd3bc/master/pass/How-to-Choose-a-Laptop-August-2023-Gear.jpg"
     },
     {
       "id": 10,
@@ -108,7 +117,8 @@
       "rating": 4.43,
       "stock": 89,
       "brand": "HP Pavilion",
-      "category": "laptops"
+      "category": "laptops",
+      "image": "https://media.wired.com/photos/64daad6b4a854832b16fd3bc/master/pass/How-to-Choose-a-Laptop-August-2023-Gear.jpg"
     },
     {
       "id": 11,
@@ -119,7 +129,8 @@
       "rating": 4.26,
       "stock": 65,
       "brand": "Impression of Acqua Di Gio",
-      "category": "fragrances"
+      "category": "fragrances",
+      "image": "https://as1.ftcdn.net/v2/jpg/02/57/81/58/1000_F_257815846_MuFjgEW2J5Ak67QZblNjdStccsK43KUG.jpg"
     },
     {
       "id": 12,
@@ -130,7 +141,8 @@
       "rating": 4,
       "stock": 52,
       "brand": "Royal_Mirage",
-      "category": "fragrances"
+      "category": "fragrances",
+      "image": "https://as1.ftcdn.net/v2/jpg/02/57/81/58/1000_F_257815846_MuFjgEW2J5Ak67QZblNjdStccsK43KUG.jpg"
     },
     {
       "id": 13,
@@ -141,7 +153,8 @@
       "rating": 4.59,
       "stock": 61,
       "brand": "Fog Scent Xpressio",
-      "category": "fragrances"
+      "category": "fragrances",
+      "image": "https://as1.ftcdn.net/v2/jpg/02/57/81/58/1000_F_257815846_MuFjgEW2J5Ak67QZblNjdStccsK43KUG.jpg"
     },
     {
       "id": 14,
@@ -152,7 +165,8 @@
       "rating": 4.21,
       "stock": 114,
       "brand": "Al Munakh",
-      "category": "fragrances"
+      "category": "fragrances",
+      "image": "https://as1.ftcdn.net/v2/jpg/02/57/81/58/1000_F_257815846_MuFjgEW2J5Ak67QZblNjdStccsK43KUG.jpg"
     },
     {
       "id": 15,
@@ -162,19 +176,21 @@
       "discountPercentage": 10.99,
       "rating": 4.7,
       "stock": 105,
-      "brand": "Lord - Al-Rehab",
-      "category": "fragrances"
+      "brand": "Al-Rehab",
+      "category": "fragrances",
+      "image": "https://as1.ftcdn.net/v2/jpg/02/57/81/58/1000_F_257815846_MuFjgEW2J5Ak67QZblNjdStccsK43KUG.jpg"
     },
     {
       "id": 16,
       "title": "Hyaluronic Acid Serum",
-      "description": "L'OrÃ©al Paris introduces Hyaluron Expert Replumping Serum formulated with 1.5% Hyaluronic Acid",
+      "description": "L'Oréal Paris introduces Hyaluron Expert Replumping Serum formulated with 1.5% Hyaluronic Acid",
       "price": 19,
       "discountPercentage": 13.31,
       "rating": 4.83,
       "stock": 110,
       "brand": "L'Oreal Paris",
-      "category": "skincare"
+      "category": "skincare",
+      "image": "https://img.freepik.com/premium-photo/skin-care-products-pink-background-beauty-products-spa-ai-generated_848885-19.jpg"
     },
     {
       "id": 17,
@@ -185,7 +201,8 @@
       "rating": 4.52,
       "stock": 78,
       "brand": "Hemani Tea",
-      "category": "skincare"
+      "category": "skincare",
+      "image": "https://img.freepik.com/premium-photo/skin-care-products-pink-background-beauty-products-spa-ai-generated_848885-19.jpg"
     },
     {
       "id": 18,
@@ -196,7 +213,8 @@
       "rating": 4.56,
       "stock": 88,
       "brand": "Dermive",
-      "category": "skincare"
+      "category": "skincare",
+      "image": "https://img.freepik.com/premium-photo/skin-care-products-pink-background-beauty-products-spa-ai-generated_848885-19.jpg"
     },
     {
       "id": 19,
@@ -207,29 +225,32 @@
       "rating": 4.42,
       "stock": 54,
       "brand": "ROREC White Rice",
-      "category": "skincare"
+      "category": "skincare",
+      "image": "https://img.freepik.com/premium-photo/skin-care-products-pink-background-beauty-products-spa-ai-generated_848885-19.jpg"
     },
     {
       "id": 20,
       "title": "Freckle Treatment Cream- 15gm",
-      "description": "Fair & Clear is Pakistan's only pure Freckle cream which helpsfade Freckles, Darkspots and pigments. Mercury level is 0%, so there are no side effects.",
+      "description": "Fair & Clear is Pakistan’s only pure Freckle cream. Which helps fade freckles, dark spots, and other discolorations.",
       "price": 70,
       "discountPercentage": 16.99,
       "rating": 4.06,
       "stock": 140,
       "brand": "Fair & Clear",
-      "category": "skincare"
+      "category": "skincare",
+      "image": "https://img.freepik.com/premium-photo/skin-care-products-pink-background-beauty-products-spa-ai-generated_848885-19.jpg"
     },
     {
       "id": 21,
-      "title": "- Daal Masoor 500 grams",
+      "title": "Daal Masoor 500 grams",
       "description": "Fine quality Branded Product Keep in a cool and dry place",
       "price": 20,
       "discountPercentage": 4.81,
       "rating": 4.44,
       "stock": 133,
       "brand": "Saaf & Khaas",
-      "category": "groceries"
+      "category": "groceries",
+      "image": "https://media.istockphoto.com/id/1412723839/photo/online-buying-and-delivery-concept.jpg?s=612x612&w=0&k=20&c=GoPboEBhcm4AEsVPI7kgcD3lYIUABarVnp6_otsTHcY="
     },
     {
       "id": 22,
@@ -240,18 +261,20 @@
       "rating": 4.57,
       "stock": 146,
       "brand": "Bake Parlor Big",
-      "category": "groceries"
+      "category": "groceries",
+      "image": "https://media.istockphoto.com/id/1412723839/photo/online-buying-and-delivery-concept.jpg?s=612x612&w=0&k=20&c=GoPboEBhcm4AEsVPI7kgcD3lYIUABarVnp6_otsTHcY="
     },
     {
       "id": 23,
-      "title": "Orange Essence Food Flavou",
+      "title": "Orange Essence Food Flavour",
       "description": "Specifications of Orange Essence Food Flavour For Cakes and Baking Food Item",
       "price": 14,
       "discountPercentage": 8.04,
       "rating": 4.85,
       "stock": 26,
       "brand": "Baking Food Items",
-      "category": "groceries"
+      "category": "groceries",
+      "image": "https://media.istockphoto.com/id/1412723839/photo/online-buying-and-delivery-concept.jpg?s=612x612&w=0&k=20&c=GoPboEBhcm4AEsVPI7kgcD3lYIUABarVnp6_otsTHcY="
     },
     {
       "id": 24,
@@ -262,7 +285,8 @@
       "rating": 4.94,
       "stock": 113,
       "brand": "fauji",
-      "category": "groceries"
+      "category": "groceries",
+      "image": "https://media.istockphoto.com/id/1412723839/photo/online-buying-and-delivery-concept.jpg?s=612x612&w=0&k=20&c=GoPboEBhcm4AEsVPI7kgcD3lYIUABarVnp6_otsTHcY="
     },
     {
       "id": 25,
@@ -273,7 +297,8 @@
       "rating": 4.87,
       "stock": 47,
       "brand": "Dry Rose",
-      "category": "groceries"
+      "category": "groceries",
+      "image": "https://media.istockphoto.com/id/1412723839/photo/online-buying-and-delivery-concept.jpg?s=612x612&w=0&k=20&c=GoPboEBhcm4AEsVPI7kgcD3lYIUABarVnp6_otsTHcY="
     },
     {
       "id": 26,
@@ -284,7 +309,8 @@
       "rating": 4.08,
       "stock": 131,
       "brand": "Boho Decor",
-      "category": "home-decoration"
+      "category": "home-decoration",
+      "image": "https://www.centuryply.com/assets/img/blog/25-08-22/11.jpg"
     },
     {
       "id": 27,
@@ -295,7 +321,8 @@
       "rating": 4.41,
       "stock": 17,
       "brand": "Flying Wooden",
-      "category": "home-decoration"
+      "category": "home-decoration",
+      "image": "https://www.centuryply.com/assets/img/blog/25-08-22/11.jpg"
     },
     {
       "id": 28,
@@ -306,7 +333,8 @@
       "rating": 4.82,
       "stock": 54,
       "brand": "LED Lights",
-      "category": "home-decoration"
+      "category": "home-decoration",
+      "image": "https://www.centuryply.com/assets/img/blog/25-08-22/11.jpg"
     },
     {
       "id": 29,
@@ -317,7 +345,8 @@
       "rating": 4.44,
       "stock": 7,
       "brand": "luxury palace",
-      "category": "home-decoration"
+      "category": "home-decoration",
+      "image": "https://www.centuryply.com/assets/img/blog/25-08-22/11.jpg"
     },
     {
       "id": 30,
@@ -328,10 +357,8 @@
       "rating": 4.92,
       "stock": 54,
       "brand": "Golden",
-      "category": "home-decoration"
+      "category": "home-decoration",
+      "image": "https://www.centuryply.com/assets/img/blog/25-08-22/11.jpg"
     }
-  ],
-  "total": 100,
-  "skip": 0,
-  "limit": 30
+  ]
 }

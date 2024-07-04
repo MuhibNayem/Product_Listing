@@ -12,6 +12,7 @@ interface Product {
   rating?: number;
   stock?: number;
   brand?: string;
+  image?: string;
 }
 
 export const useGetProducts = (

@@ -7,26 +7,29 @@ import Login from 'screens/auth/login/Login';
 import Register from 'screens/auth/register/Register';
 import ProductList from 'screens/home/Products';
 import ProtectedRoute from './protectedRoutes/protectedRoutes';
+import { AlertProvider } from 'components/alert/Alert';
 
 
 const App: React.FC = () => {
   return (
     <Provider store={store}>
-      <Router>
-        <Routes>
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/" element={<Login />} />
-          <Route
-            path="/products"
-            element={
-              <ProtectedRoute>
-                <ProductList />
-              </ProtectedRoute>
-            }
-          />
-        </Routes>
-      </Router>
+       <AlertProvider>
+        <Router>
+          <Routes>
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/" element={<Login />} />
+            <Route
+              path="/products"
+              element={
+                <ProtectedRoute>
+                  <ProductList />
+                </ProtectedRoute>
+              }
+            />
+          </Routes>
+        </Router>
+       </AlertProvider>
     </Provider>
   );
 };

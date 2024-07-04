@@ -2,23 +2,18 @@ version: "4"
 
 services:
   server:
-    build: ./server
+    build:
+      context: ./server
+      target: Prod
     ports:
       - "3001:3001"
     volumes:
-      - ./server:/app
-      - /app/node_modules
-    environment:
-      - NODE_ENV=development
+      - ./server/.env:/app/.env
 
   client:
-    build: ./client
+    build:
+      context: ./client
     ports:
       - "3000:80"
-    volumes:
-      - ./client:/app
-      - /app/node_modules
-    environment:
-      - NODE_ENV=development
     depends_on:
       - server
