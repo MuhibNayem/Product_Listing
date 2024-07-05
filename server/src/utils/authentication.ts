@@ -3,7 +3,6 @@ import jwt from "jsonwebtoken";
 
 const JWT_SECRET = process.env.JWT_SECRET;
 
-// Middleware to protect routes
 export const authenticateToken = (
   req: Request,
   res: Response,

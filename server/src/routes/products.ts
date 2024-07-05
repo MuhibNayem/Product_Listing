@@ -6,7 +6,6 @@ import { authenticateToken } from "../utils/authentication";
 
 const router = Router();
 
-// Get products with optional search
 router.get("/", authenticateToken, (req: Request, res: Response) => {
   const search = req?.query?.search?.toString().toLowerCase();
   const products: Product[] = data?.products;
@@ -16,7 +15,6 @@ router.get("/", authenticateToken, (req: Request, res: Response) => {
   res.json(filteredProducts);
 });
 
-// Get single product with id
 router.get("/:id", authenticateToken, (req: Request, res: Response) => {
   const productId = parseInt(req?.params?.id);
   const products: Product[] = data?.products;

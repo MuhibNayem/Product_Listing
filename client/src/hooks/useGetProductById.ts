@@ -1,18 +1,20 @@
 import { useState, useEffect } from "react";
 import axios, { AxiosRequestConfig } from "axios";
-import { useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { Product } from "types/Products";
 import { useSelector } from "react-redux";
 import { RootState } from "store";
 
-export const useGetProducts = (searchTerm: string) => {
+export const useGetProductById = () => {
+  const { id } = useParams<{ id: string }>();
   const token = useSelector((state: RootState) => state.auth.token);
-  const [products, setProducts] = useState<Product[]>([]);
+  const [product, setProduct] = useState<Product | null>(null);
   const [error, setError] = useState<string | null>(null);
-  const navigate = useNavigate();
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const fetchProducts = async () => {
+    const fetchProduct = async () => {
+      setLoading(true);
       try {
         const config: AxiosRequestConfig = {
           headers: {},
@@ -22,34 +24,23 @@ export const useGetProducts = (searchTerm: string) => {
           config.headers.Authorization = `Bearer ${token}`;
         }
 
-        if (searchTerm) {
-          config.params = { search: searchTerm };
-        }
-
         const response = await axios.get(
-          "http://localhost:3001/api/products",
+          `http://localhost:3001/api/products/${id}`,
           config
         );
-        setProducts(response.data);
+        setProduct(response.data);
       } catch (error) {
         if (axios.isAxiosError(error)) {
           setError(error.message);
         } else {
           setError("An error occurred while fetching data.");
         }
+      } finally {
+        setLoading(false);
       }
     };
+    fetchProduct();
+  }, [id, token]);
 
-    fetchProducts();
-  }, [searchTerm, token]);
-
-  useEffect(() => {
-    const params = new URLSearchParams();
-    if (searchTerm) {
-      params.set("search", searchTerm);
-    }
-    navigate(`?${params.toString()}`, { replace: true });
-  }, [searchTerm, navigate]);
-
-  return { products, error };
+  return { product, error, loading };
 };

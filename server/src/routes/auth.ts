@@ -9,9 +9,7 @@ const router = Router();
 const users: User[] = [];
 
 const JWT_SECRET = process.env.JWT_SECRET;
-const JWT_EXPIRATION = "1h";
 
-// Register route
 router.post("/register", async (req: Request, res: Response) => {
   const { username, password } = req.body;
   const hashedPassword = await bcrypt.hash(password, 10);
@@ -19,14 +17,11 @@ router.post("/register", async (req: Request, res: Response) => {
   res.status(201).send("User registered");
 });
 
-// Login route
 router.post("/login", async (req: Request, res: Response) => {
   const { username, password } = req.body;
-  const user = users.find((u) => u.username === username);
+  const user = users.find((user) => user.username === username);
   if (user && (await bcrypt.compare(password, user.password))) {
-    const token = jwt.sign({ username: user.username }, JWT_SECRET ?? "", {
-      expiresIn: JWT_EXPIRATION,
-    });
+    const token = jwt.sign({ username: user.username }, JWT_SECRET ?? "");
     res.json({ message: "Authentication successful", token });
   } else {
     res.status(401).send("Invalid credentials");
