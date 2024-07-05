@@ -1,5 +1,5 @@
 import axios, { AxiosRequestConfig } from "axios";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef, useMemo } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
@@ -14,26 +14,43 @@ export const useGetProducts = (searchTerm: string) => {
   const navigate = useNavigate();
   const debouncedSearchTerm = useDebounce(searchTerm, 500);
 
+  const cacheRef = useRef<Map<string, Product[]>>(new Map());
+
+  const fetchProducts = async (
+    debouncedSearchTerm: string,
+    token: string | null
+  ) => {
+    const cacheKey = `${debouncedSearchTerm}-${token}`;
+    if (cacheRef.current.has(cacheKey)) {
+      return cacheRef.current.get(cacheKey) || [];
+    }
+
+    const config: AxiosRequestConfig = {
+      headers: {},
+      params: {},
+    };
+
+    if (token && config?.headers) {
+      config.headers.Authorization = `Bearer ${token}`;
+    }
+
+    if (debouncedSearchTerm) {
+      config.params.search = debouncedSearchTerm;
+    }
+
+    const response = await axios.get(
+      "http://localhost:3001/api/products",
+      config
+    );
+    cacheRef.current.set(cacheKey, response.data);
+    return response.data;
+  };
+
   useEffect(() => {
-    const fetchProducts = async () => {
+    const loadProducts = async () => {
       try {
-        const config: AxiosRequestConfig = {
-          headers: {},
-        };
-
-        if (token && config?.headers) {
-          config.headers.Authorization = `Bearer ${token}`;
-        }
-
-        if (debouncedSearchTerm) {
-          config.params = { search: debouncedSearchTerm };
-        }
-
-        const response = await axios.get(
-          "http://localhost:3001/api/products",
-          config
-        );
-        setProducts(response.data);
+        const fetchedProducts = await fetchProducts(debouncedSearchTerm, token);
+        setProducts(fetchedProducts);
       } catch (error) {
         if (axios.isAxiosError(error)) {
           setError(error.message);
@@ -43,7 +60,7 @@ export const useGetProducts = (searchTerm: string) => {
       }
     };
 
-    fetchProducts();
+    loadProducts();
   }, [debouncedSearchTerm, token]);
 
   useEffect(() => {
@@ -54,5 +71,5 @@ export const useGetProducts = (searchTerm: string) => {
     navigate(`?${params.toString()}`, { replace: true });
   }, [searchTerm, navigate]);
 
-  return { products, error };
+  return useMemo(() => ({ products, error }), [products, error]);
 };
