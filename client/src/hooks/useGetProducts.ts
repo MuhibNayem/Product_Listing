@@ -11,6 +11,7 @@ export const useGetProducts = (searchTerm: string) => {
   const token = useSelector((state: RootState) => state.auth.token);
   const [products, setProducts] = useState<Product[]>([]);
   const [error, setError] = useState<string | null>(null);
+  const [loading, setLoading] = useState<boolean>(false);
   const navigate = useNavigate();
   const debouncedSearchTerm = useDebounce(searchTerm, 500);
 
@@ -48,6 +49,7 @@ export const useGetProducts = (searchTerm: string) => {
 
   useEffect(() => {
     const loadProducts = async () => {
+      setLoading(true);
       try {
         const fetchedProducts = await fetchProducts(debouncedSearchTerm, token);
         setProducts(fetchedProducts);
@@ -57,6 +59,8 @@ export const useGetProducts = (searchTerm: string) => {
         } else {
           setError("An error occurred while fetching data.");
         }
+      } finally {
+        setLoading(false);
       }
     };
 
@@ -71,5 +75,8 @@ export const useGetProducts = (searchTerm: string) => {
     navigate(`?${params.toString()}`, { replace: true });
   }, [searchTerm, navigate]);
 
-  return useMemo(() => ({ products, error }), [products, error]);
+  return useMemo(
+    () => ({ products, loading, error }),
+    [products, error, loading]
+  );
 };
