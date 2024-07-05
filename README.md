@@ -45,11 +45,13 @@
 
 ### Docker
 
-1. Build and run the containers:
+1. Spin up docker first.
+
+2. Build and run the containers:
 
    ```bash
    docker-compose up --build
    ```
 
-2. Access the application:
+3. Access the application:
    - App URL : `http://localhost:3000`

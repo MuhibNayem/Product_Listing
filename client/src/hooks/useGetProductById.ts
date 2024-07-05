@@ -1,9 +1,10 @@
-import { useState, useEffect } from "react";
 import axios, { AxiosRequestConfig } from "axios";
+import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { Product } from "types/Products";
 import { useSelector } from "react-redux";
+
 import { RootState } from "store";
+import { Product } from "types/Products";
 
 export const useGetProductById = () => {
   const { id } = useParams<{ id: string }>();

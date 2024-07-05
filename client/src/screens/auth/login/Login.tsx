@@ -1,21 +1,21 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { loginUser } from '../../../store/authSlice';
-import { AppDispatch } from 'store';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
 import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
+
 import { useAlert } from 'components/alert/Alert';
+import { AppDispatch } from 'store';
+import { loginUser } from '../../../store/authSlice';
+
 
 
 const Login: React.FC = () => {
@@ -34,10 +34,6 @@ const Login: React.FC = () => {
       console.log(result)
       showAlert('Login failed', 'error');
     }
-  };
-
-  const handleNavigateToRegister = () => {
-    navigate('/register');
   };
 
   return (
@@ -90,9 +86,9 @@ const Login: React.FC = () => {
           >
             Sign In
           </Button>
-          <Grid container>
+          <Grid container justifyContent="flex-end">
             <Grid item>
-              <Link href="#" variant="body2" onClick={handleNavigateToRegister}>
+              <Link href="/register" variant="body2">
                 {"Don't have an account? Sign Up"}
               </Link>
             </Grid>

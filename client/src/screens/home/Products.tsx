@@ -1,7 +1,6 @@
 import React, { useState, ChangeEvent } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { useGetProducts } from '../../hooks/useGetProducts';
 import { 
   Card, 
   CardContent, 
@@ -12,10 +11,13 @@ import {
   Button, 
   CardActionArea,
 } from '@mui/material';
-import { logout } from '../../store/authSlice';
+
 import { AppDispatch } from 'store';
 import Rating from 'components/ratings/Ratings';
 import LazyImage from 'components/lazyImage/LazyImage';
+import { useGetProducts } from '../../hooks/useGetProducts';
+import { logout } from '../../store/authSlice';
+
 
 const dummyImageURL = "https://img.freepik.com/free-vector/illustration-gallery-icon_53876-27002.jpg?w=1060&t=st=1720106937~exp=1720107537~hmac=c2f2818be61e10d357ce4f779a0ec33c2d5925d0dbb9c0e515c43ec286e4edc2";
 
@@ -48,7 +50,7 @@ const Products: React.FC = () => {
 
   return (
     <Container>
-      <Button variant="contained" color="secondary" onClick={handleLogout} sx={{ mt: 2, mb: 2 }}>
+      <Button variant="contained" color="error" onClick={handleLogout} sx={{ mt: 2, mb: 2 }}>
         Logout
       </Button>
       <Typography variant="h4" component="h2" gutterBottom>

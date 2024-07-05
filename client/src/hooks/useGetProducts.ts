@@ -1,15 +1,18 @@
-import { useState, useEffect } from "react";
 import axios, { AxiosRequestConfig } from "axios";
-import { useNavigate } from "react-router-dom";
-import { Product } from "types/Products";
+import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+
+import { useDebounce } from "hooks/useDebounce";
 import { RootState } from "store";
+import { Product } from "types/Products";
 
 export const useGetProducts = (searchTerm: string) => {
   const token = useSelector((state: RootState) => state.auth.token);
   const [products, setProducts] = useState<Product[]>([]);
   const [error, setError] = useState<string | null>(null);
   const navigate = useNavigate();
+  const debouncedSearchTerm = useDebounce(searchTerm, 500);
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -22,8 +25,8 @@ export const useGetProducts = (searchTerm: string) => {
           config.headers.Authorization = `Bearer ${token}`;
         }
 
-        if (searchTerm) {
-          config.params = { search: searchTerm };
+        if (debouncedSearchTerm) {
+          config.params = { search: debouncedSearchTerm };
         }
 
         const response = await axios.get(
@@ -41,7 +44,7 @@ export const useGetProducts = (searchTerm: string) => {
     };
 
     fetchProducts();
-  }, [searchTerm, token]);
+  }, [debouncedSearchTerm, token]);
 
   useEffect(() => {
     const params = new URLSearchParams();

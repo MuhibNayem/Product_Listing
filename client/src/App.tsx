@@ -4,16 +4,16 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Login from 'screens/auth/login/Login';
 import Register from 'screens/auth/register/Register';
 import ProductList from 'screens/home/Products';
-import ProtectedRoute from './protectedRoutes/protectedRoutes';
 import ProductDetail from 'screens/home/ProductDetails';
+import ProtectedRoute from './protectedRoutes/protectedRoutes';
 
 const App: React.FC = () => {
   return (
     <Router>
       <Routes>
+        <Route path="/" element={<Login />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/" element={<Login />} />
         <Route
           path="/products"
           element={

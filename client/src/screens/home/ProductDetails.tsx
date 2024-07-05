@@ -1,5 +1,4 @@
 import React from 'react';
-import { useGetProductById } from 'hooks/useGetProductById';
 import {
   Typography,
   Container,
@@ -8,6 +7,8 @@ import {
   Button,
   CircularProgress,
 } from '@mui/material';
+
+import { useGetProductById } from 'hooks/useGetProductById';
 import Rating from 'components/ratings/Ratings';
 
 const ProductDetail: React.FC = () => {
