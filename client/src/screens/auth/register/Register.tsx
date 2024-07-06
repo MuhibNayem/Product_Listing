@@ -1,8 +1,6 @@
-import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
-import { registerUser } from '../../../store/authSlice';
-import { AppDispatch } from 'store';
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useLocation, useNavigate } from 'react-router-dom';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -13,15 +11,25 @@ import Box from '@mui/material/Box';
 import LockOpenOutlinedIcon from '@mui/icons-material/LockOpenOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
-import { useAlert } from 'components/alert/Alert';
 
+import { useAlert } from 'components/alert/Alert';
+import { AppDispatch, RootState } from 'store';
+import { registerUser } from '../../../store/authSlice';
 
 const Register: React.FC = () => {
+  const token = useSelector((state: RootState) => state.auth.token);
+  const {pathname} = useLocation();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const dispatch = useDispatch<AppDispatch>();
   const navigate = useNavigate();
   const { showAlert } = useAlert();
+
+  useEffect(()=>{
+    if(token){
+      navigate('/products');
+    }
+  },[pathname, token, navigate])
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();

@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate, useLocation } from 'react-router-dom';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -13,17 +13,23 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 
 import { useAlert } from 'components/alert/Alert';
-import { AppDispatch } from 'store';
+import { AppDispatch, RootState } from 'store';
 import { loginUser } from '../../../store/authSlice';
 
-
-
 const Login: React.FC = () => {
+  const token = useSelector((state: RootState) => state.auth.token);
+  const {pathname} = useLocation();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const dispatch = useDispatch<AppDispatch>();
   const navigate = useNavigate();
   const { showAlert } = useAlert();
+
+  useEffect(()=>{
+    if(token){
+      navigate('/products');
+    }
+  },[pathname, token, navigate])
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
