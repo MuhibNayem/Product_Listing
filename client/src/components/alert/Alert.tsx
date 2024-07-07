@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, ReactNode } from 'react';
+import React, { createContext, useContext, useState, ReactNode, useMemo, useCallback } from 'react';
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert, { AlertProps } from '@mui/material/Alert';
 
@@ -13,20 +13,22 @@ const AlertProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [message, setMessage] = useState('');
   const [severity, setSeverity] = useState<AlertProps['severity']>('success');
 
-  const showAlert = (message: string, severity: AlertProps['severity']) => {
+  const showAlert = useCallback((message: string, severity: AlertProps['severity']) => {
     setMessage(message);
     setSeverity(severity);
     setOpen(true);
-  };
+  }, []);
 
   const handleClose = () => {
     setOpen(false);
   };
 
+  const contextValue = useMemo(() => ({ showAlert }), [showAlert]);
+
   return (
-    <AlertContext.Provider value={{ showAlert }}>
+    <AlertContext.Provider value={contextValue}>
       {children}
-      <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+      <Snackbar open={open} autoHideDuration={2000} onClose={handleClose}>
         <MuiAlert onClose={handleClose} severity={severity} sx={{ width: '100%' }}>
           {message}
         </MuiAlert>

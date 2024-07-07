@@ -44,9 +44,9 @@ export const registerUser = createAsyncThunk(
         }
       );
       return response.data;
-    } catch (error: unknown) {
+    } catch (error) {
       return thunkAPI.rejectWithValue(
-        axios.isAxiosError(error) ? error.message : "failed to login"
+        axios.isAxiosError(error) ? error.message : "failed to register"
       );
     }
   }

@@ -37,7 +37,7 @@ const Register: React.FC = () => {
     if (registerUser.fulfilled.match(result)) {
       navigate('/login');
     } else {
-      showAlert('Registration failed', 'error');
+      showAlert(result?.payload as string, 'error');
     }
   };
 

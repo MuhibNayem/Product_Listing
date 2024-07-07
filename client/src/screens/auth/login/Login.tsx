@@ -37,8 +37,7 @@ const Login: React.FC = () => {
     if (loginUser.fulfilled.match(result)) {
       navigate('/products');
     } else {
-      console.log(result)
-      showAlert('Login failed', 'error');
+      showAlert(result.payload as string, 'error');
     }
   };
 
